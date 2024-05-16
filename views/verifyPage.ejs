@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/login.css">
+  
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+
+  <% if(message != '') { %>
+    <br>
+    <div class="alertmsg" id="myAlert">
+      <%= message %>
+    </div>
+  <% } %>
+  <br>
+
+
+  <div class="container right-panel-active" id="container">
+    <div class="form-container sign-up-container">
+      <form method="post" name="otpForm">
+        <div class="otp_container">
+          <h2>Verify your OTP</h2>
+          <div class="otp_verification">
+            <input type="number" class="otp" id="otp1" maxlength="1" size="1" style="text-align: center;" name="otp1" onkeyup="autoTab('otp1', '1', 'otp2')"/>
+            <input type="number" class="otp" id="otp2" maxlength="1" size="1"  style="text-align: center;" name="otp2" onkeyup="autoTab('otp2', '1', 'otp3')"  />
+            <input type="number" class="otp" id="otp3" maxlength="1" size="1" style="text-align: center;" name="otp3" onkeyup="autoTab('otp3', '1', 'otp4')"/>
+            <input type="number" class="otp" id="otp4" maxlength="1" size="1" style="text-align: center;" name="otp4" />
+          </div>
+          <p id="otp_notifications">expires in 10 minutes<strong id="countoun"></strong></p>
+        </div>
+
+        <button id="otp_ver">Sign Up</button>
+       
+      </form>
+    </div>
+  
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>Welcome Back!</h1>
+          <p>To keep connected with us please login with your personal info</p>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>Hello, Explorer!</h1>
+          <p>Enter your personal details and start journey with us</p>
+          <!-- <button class="ghost" id="signUp">Sign In</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+
+    
+function autoTab(field1, len, field2) {
+	if (document.getElementById(field1).value.length == len) {
+		document.getElementById(field2).focus();
+		}
+}
+
+function vanish(){
+  $('#myAlert').fadeOut('fast');
+ }
+
+ $(document).ready(function () {   
+	setTimeout(function () {
+		vanish()
+	}, 5000);
+});
+
+  </script>
+</body>
+</html>
