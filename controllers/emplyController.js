@@ -159,7 +159,7 @@ const del_employee=async (req,res) => {
     
   req.session.message = {
     type: "success",
-    info: "You are successfully loged out",
+    info: "You are successfully logged out",
   };
   req.flash('message', req.session.message.info)
 
