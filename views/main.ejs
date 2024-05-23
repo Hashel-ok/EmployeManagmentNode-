@@ -24,7 +24,9 @@
                 <li class="list"> <i class="fa-solid fa-house"></i> <a href="http://localhost:5001/employees/dashboard">Dashboard</a></li>
                 <li class="list"><i class="fa-solid fa-square-poll-vertical"></i>Employees</li>
                 <li class="list"><i class="fa-solid fa-user"></i>My Profile</li>
-                <li class="list"><i class="fa-solid fa-lock"></i><a href="http://localhost:5001/employees/logout">Logout</a></li>
+                <li class="list"><i class="fa-solid fa-lock"></i><form action="/employees/logout" method="post">
+                  <button type="submit">Logout</button>
+                 </form></li>
               </ul>
 
            </nav>

@@ -154,13 +154,15 @@ const del_employee=async (req,res) => {
   }
 
   const logout=(req,res) => {
-
+  
     res.clearCookie("token");
+    
   req.session.message = {
     type: "success",
     info: "You are successfully loged out",
   };
   req.flash('message', req.session.message.info)
+
   return res.redirect("/user/login");
 
   }

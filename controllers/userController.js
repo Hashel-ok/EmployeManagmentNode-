@@ -221,7 +221,6 @@ const verify_otp= async(req,res) => {
         res.redirect("/user/signup/verify/" + email);
       }
 
-
       }
 
       
